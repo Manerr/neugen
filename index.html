@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Neumorph - neumorphism generator</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+
+	<main class="neubox neu-global-style">
+		
+		<section id="title">
+			<h2>Neumorpheus</h2>
+			<p>Generate modern design in a second</p>
+		</section>
+
+		<section id="results" class="flex1">
+			
+			<div class="neu neu-global-style" id="neu">
+				
+			</div>
+
+		</section>
+
+		<section id="settings" class="neubox flex1 neu-global-style">
+			<form id="form">
+				<fieldset class="color-field">
+					<p>Color:</p>
+					<input id="color" type="color" name="color"/>
+				</fieldset>
+
+				<fieldset>
+					<p>Radius:</p><input type="range" value="8" name="radius" id="radius" min="0" max="50"/>
+				</fieldset>
+				<fieldset>
+					<p>Intensity:</p><input type="range" value=".45" name="intensity" id="intensity" min="0" step=".01" max="1.4"/>
+				</fieldset>
+				<fieldset>
+					<p>Offset:</p><input type="range" value=".4" name="offset" id="offset" min="0" step=".01" max="1.5" />
+				</fieldset>
+				<fieldset>
+					<p>Softness:</p><input type="range" value="1.1" name="blur" id="blur" min="0" max="3" step=".01"/>
+				</fieldset>
+
+			</form>
+
+			<div id="output">
+				<button id="copy">
+					<span id="copied-message">Copied!</span>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+					  <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M 12.625 1.75 L 7.375 1.75 C 6.55 1.75 5.883 2.425 5.883 3.25 L 5.875 13.75 C 5.875 14.575 6.543 15.25 7.368 15.25 L 15.625 15.25 C 16.45 15.25 17.125 14.575 17.125 13.75 L 17.125 6.25 L 12.625 1.75 Z M 14.875 18.25 L 4.375 18.25 C 3.55 18.25 2.875 17.575 2.875 16.75 L 2.875 6.25 L 4.375 6.25 L 4.375 16.75 L 14.875 16.75 L 14.875 18.25 Z M 7.375 3.25 L 7.375 13.75 L 15.625 13.75 L 15.625 7 L 11.875 7 L 11.875 3.25 L 7.375 3.25 Z" style="fill: rgb(255, 255, 255);"></path>
+					</svg>
+				</button>
+				<p class="css-content" id="output-code">
+
+<span class="css-attribute">background</span>:
+<span class="css-value" id="css-background-output">#e3e3e6</span>;
+<br/>
+
+<span class="css-attribute">border-radius</span>:
+<span class="css-value" id="css-border-radius">8</span><span class="css-unit">%</span>;<br/>
+<span class="css-attribute">box-shadow</span>:
+
+
+
+<span id="css-box-shadow">
+	<span class="css-value">-.3</span><span class="css-unit">rem</span>
+	<span class="css-value">-.3</span><span class="css-unit">rem</span>
+	<span class="css-value">.84</span><span class="css-unit">rem</span>
+	<span class="css-value">#f8f8ff</span>,
+	<span class="css-value">0</span><span class="css-unit">rem</span>
+	<span class="css-value">0</span><span class="css-unit">rem</span>
+	<span class="css-value">.84</span><span class="css-unit">rem</span>
+	<span class="css-value">#e3e3e6</span>,
+	<span class="css-value">.3</span><span class="css-unit">rem</span>
+	<span class="css-value">.3</span><span class="css-unit">rem</span>
+	<span class="css-value">.84</span><span class="css-unit">rem</span>
+	<span class="css-value">#89898a</span>;
+</span>
+
+</p>
+</div>
+
+		</section>
+
+	</main>
+<script type="text/javascript" src="main.js">
+</script>
+
+</body>
+</html>

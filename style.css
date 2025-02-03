@@ -54,7 +54,7 @@ p,h1{
 
 main{
 	box-sizing: border-box;
-	max-width: 90vw;
+	max-width: 92vw;
 	margin: auto !important;
 	display: flex;
 	flex-direction: row;
@@ -91,7 +91,8 @@ main{
 }
 
 #settings{
-	max-width: 19rem;
+	max-width: 91%;
+    width: 18rem !important;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -104,6 +105,7 @@ main{
 	align-items: center;
 	padding: .1rem;
 	width:18rem;
+	max-width: 80vw;
 }
 
 #form fieldset{
@@ -202,6 +204,8 @@ input[type=range]::-webkit-slider-thumb{
 	border-radius: .4rem;
 	font-family: monospace;
 	width: 18rem;
+	max-width: 80vw;
+
 	box-sizing: border-box;
 	background-color: #040833;
 	color: white;

@@ -29,7 +29,6 @@ p,h1{
 
 
 .neubox{
-/*			flex: 0;*/
 	margin: 0 1rem;
 	padding: .9rem;
 	border-radius: 1rem;
@@ -39,22 +38,12 @@ p,h1{
 	.3rem .3rem .84rem #89898a;
 }
 
-/*.neu-global-style{
-	box-shadow: 
-	-.3rem -.3rem .84rem #f8f8ff,
-	.3rem .3rem .84rem #e3e3e6,
-	.3rem .3rem .84rem #89898a;			
-}*/
 
 .neu{
-/*			margin: 1rem;*/
 	margin: 1rem auto;
 	width:8rem;
 	height:8rem;
 	border-radius: 8%;
-/*			background:red;*/
-/*			background: linear-gradient(145deg,red,blue);*/
-/*			border-radius: 1.7rem;*/
 }
 
 #results{
@@ -147,7 +136,6 @@ input[type="range"]{
 	appearance: none;
 	border-radius: .5rem;
 	height: 100%;
-/*			color: blue;*/
 	background: none;
 	padding: 0;
 	outline: none;
@@ -161,10 +149,6 @@ input[type="range"]::-webkit-slider-runnable-track {
 	display: block;
 	background-color: currentColor;
 	border-radius: .2rem;
-	/*box-shadow: 
-	-.3rem -.3rem .84rem #f8f8ff,
-	.3rem .3rem .84rem #e3e3e6,
-	.3rem .3rem .84rem #89898a;*/
 	cursor: pointer;
 	height: .4rem;
 }
@@ -208,9 +192,6 @@ input[type=range]::-webkit-slider-thumb{
 }
 
 
-
-
-
 #output{
 	margin-top: .75rem;
 	user-select: all;
@@ -225,7 +206,6 @@ input[type=range]::-webkit-slider-thumb{
 	background-color: #040833;
 	color: white;
 	text-align: left;
-/*			overflow-x: scroll;*/
 	text-wrap: wrap;
 	font-size: .75rem;
 	padding: .4rem;
@@ -295,5 +275,3 @@ input[type=range]::-webkit-slider-thumb{
 .css-value{
 	color: #F94493;
 }
-
-

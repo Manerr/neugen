@@ -69,13 +69,13 @@ function drawBoxShadow(){
 	offsetvalue = offsetvalue.slice(0,-3);
 
 	let outputboxshadowstring = '<span id="css-box-shadow"><br/>\
-<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem</span>\
-<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem</span>\
+<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
 <span class="css-value">' + blurness + '</span><span class="css-unit">rem</span>\
 <span class="css-value"> ' + newlightShadow + '</span>,<br/>\
-<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem</span>\
-<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem</span>\
-<span class="css-value">' + blurness + '</span><span class="css-unit">rem</span>\
+<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + blurness + '</span><span class="css-unit">rem </span>\
 <span class="css-value">' + newdarkShadow + '</span>;\
 </span>';
 

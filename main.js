@@ -35,14 +35,8 @@ function drawBoxShadow(){
 
 	let lightpower = 16 * intensity;
 	let darkpower = 88 * intensity;
-	// let midpower = Math.floor((7 * intensity) ** 1.3 - 15);
 
-
-	//We'll then make the mid shadow darker
-	// let midColor = "#" + Math.min(Math.floor(currentColorR-midpower),255).toString(16) +  Math.min(Math.floor(currentColorG-midpower),255).toString(16) +  Math.min(Math.floor(currentColorB-midpower),255).toString(16);
-
-
-	let newlightShadow = "#" + Math.min(Math.floor(currentColorR+lightpower),255).toString(16) +  Math.min(Math.floor(currentColorG+lightpower),255).toString(16) +  Math.min(Math.floor(currentColorB+lightpower),255).toString(16);
+	let newlightShadow = "#" + Math.min(Math.floor(currentColorR+lightpower),255).toString(16).padStart(2,"0") +  Math.min(Math.floor(currentColorG+lightpower),255).toString(16).padStart(2,"0") +  Math.min(Math.floor(currentColorB+lightpower),255).toString(16).padStart(2,"0");
 	
 	let newdarkShadow = "#" + Math.max(Math.floor(currentColorR-darkpower),0).toString(16).padStart(2,"0") +  Math.max(Math.floor(currentColorG-darkpower),0).toString(16).padStart(2,"0") +  Math.max(Math.floor(currentColorB-darkpower),0).toString(16).padStart(2,"0");
 
@@ -50,7 +44,6 @@ function drawBoxShadow(){
 
 	let newBoxShadow = 	("-"+ offsetvalue + " -" + offsetvalue + " " + blurness + " " + newlightShadow + " , " + offsetvalue + " " + offsetvalue + " " + blurness + " " + newdarkShadow);
 
-	// console.log(newBoxShadow);
 
 	
 	for (var i = neuStyleClass.length - 2; i >= 0; i--) {
@@ -66,7 +59,6 @@ function drawBoxShadow(){
 
 
 	blurness = blurness.slice(0,-3);
-	console.log(blurness);
 	offsetvalue = offsetvalue.slice(0,-3);
 
 	let outputboxshadowstring = '<br/>\

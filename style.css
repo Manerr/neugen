@@ -308,6 +308,6 @@ footer{
 
 #bottom-link:hover img{
 	transition: .5s filter;
-	filter: invert(70%);
+	filter: invert(75%);
 
 }

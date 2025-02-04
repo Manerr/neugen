@@ -20,7 +20,7 @@ body{
 	justify-content: center;
 	margin: 0;
 	font-family: "opensans",sans-serif;
-	height: 100vh;
+	min-height: 100vh;
 	background: #e3e3e6;
 }
 

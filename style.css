@@ -56,7 +56,7 @@ p,h1{
 main{
 	box-sizing: border-box;
 	max-width: 92vw;
-	margin: auto !important;
+	margin:1.5rem auto !important;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

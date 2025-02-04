@@ -62,13 +62,14 @@ function drawBoxShadow(){
 		}
 	}
 	neuStyleClass[2].style.boxShadow = newBoxShadow.replace(",","inset ,") + " inset";
+	neuStyleClass[3].style.boxShadow = newBoxShadow.replace(",","inset ,") + " inset";
 
 
 	blurness = blurness.slice(0,-3);
 	console.log(blurness);
 	offsetvalue = offsetvalue.slice(0,-3);
 
-	let outputboxshadowstring = '<span id="css-box-shadow"><br/>\
+	let outputboxshadowstring = '<br/>\
 <span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
 <span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
 <span class="css-value">' + blurness + '</span><span class="css-unit">rem</span>\
@@ -76,8 +77,7 @@ function drawBoxShadow(){
 <span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
 <span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
 <span class="css-value">' + blurness + '</span><span class="css-unit">rem </span>\
-<span class="css-value">' + newdarkShadow + '</span>;\
-</span>';
+<span class="css-value">' + newdarkShadow + '</span>;';
 
 codeOutputBoxShadowCSS.innerHTML = outputboxshadowstring;
 

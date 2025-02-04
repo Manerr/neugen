@@ -15,6 +15,7 @@
 
 body{
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	margin: 0;
@@ -61,7 +62,7 @@ main{
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	padding-bottom: 1.4rem !important;
+	padding-bottom: .4rem !important;
 }
 
 .flex1{
@@ -278,4 +279,35 @@ input[type=range]::-webkit-slider-thumb{
 
 .css-value{
 	color: #F94493;
+}
+
+
+footer{
+	width: 100%;
+	text-align: right;
+}
+
+#bottom-link{
+	position: relative;
+	left: -.4rem;
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+#bottom-link img{
+	width: 80%;
+	height: 80%;
+	transition: .5s filter;
+	filter: invert(55%);
+}
+
+#bottom-link:hover img{
+	transition: .5s filter;
+	filter: invert(70%);
+
 }

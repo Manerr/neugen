@@ -1,15 +1,16 @@
 {
     "short_name": "Neugen",
     "name": "Neugen - neumorphism CSS generator",
+    "description": "Modern looking CSS code generator around the neumorphism trend.",
     "start_url": ".",
     "icons": [
         {
-            "src": "./icons/favicon.png",
+            "src": "icons/favicon.png",
             "sizes": "32x32",
             "type": "image/png"
         },
         {
-            "src": "./icons/favicon-192x192.png",
+            "src": "icons/favicon-192x192.png",
             "type": "image/png",
             "sizes": "192x192"
         }

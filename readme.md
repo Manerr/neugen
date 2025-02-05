@@ -1,4 +1,4 @@
-<p align="center"><img src="./icons/ogImage.png" width="200"></p>
+<p align="center"><img src="./icons/ogImage.png" style="width:40vw;min-width: 14rem;max-width: 500px;"></p>
 
 # Neugen
 

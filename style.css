@@ -170,6 +170,57 @@ input[type=range]::-webkit-slider-thumb{
 	outline: 1px solid #141863;
 }
 
+#type{
+	border: none;
+	outline: none;
+	padding: 0;
+	margin: auto 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+#type input{
+	width: 3rem;
+	text-align: center;
+	-webkit-appearance:none;
+	appearance:none;
+	border: none;
+	background-color: none;
+	color: inherit;
+	margin: 0;
+}
+
+#type input::after{
+	font-family: "opensans", sans-serif;
+/*	font-family: sans-serif;*/
+	margin: 0;
+	width: 100%;
+	cursor: pointer;
+	border-radius: .3rem;
+	padding: .4rem .3rem !important;
+	content: attr(title);
+	display: block;
+	color: #040833;
+    margin: auto;
+    margin-right: .5rem;
+    font-size: .75rem;
+    font-weight: 800;
+    line-height: 50%;
+    letter-spacing: -.7px;
+    border-color:red;
+    outline: 1px solid blue;
+	outline-color:lightblue;
+/*    background-color: white;*/
+}
+
+#type input:checked::after{
+	outline-color:#040833;
+
+}
+
+
 .color-field{
 	position: relative;
 }
@@ -221,6 +272,11 @@ input[type=range]::-webkit-slider-thumb{
 	user-select: all;
 	padding: 0;
 	margin: 0;
+}
+
+.css-content *{
+/*	transform: translateZ(0);*/
+/*	position: relative;*/
 }
 
 #copy svg{

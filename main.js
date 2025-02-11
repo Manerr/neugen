@@ -11,6 +11,8 @@ let codeOutputBoxShadowCSS = document.getElementById("css-box-shadow");
 
 let neuStyleClass = document.querySelectorAll(".neu-global-style");
 
+let boxShadowType = 0;
+
 let softness = 1;
 let globalColor = "#e3e3e6";
 
@@ -42,13 +44,34 @@ function drawBoxShadow(){
 
 
 
+	//inner shaddow
+	if(boxShadowType == 1){
+		let tmp = newlightShadow;
+		newlightShadow = newdarkShadow;
+		newdarkShadow = tmp;
+	}
+
+
 	let newBoxShadow = 	("-"+ offsetvalue + " -" + offsetvalue + " " + blurness + " " + newlightShadow + " , " + offsetvalue + " " + offsetvalue + " " + blurness + " " + newdarkShadow);
+	if(boxShadowType == 0){
+	}
+	else if(boxShadowType == 1){
+		inner = 1;
+	}
+	else{
+		inner = 2;
+	}
 
 
 	
 	for (var i = neuStyleClass.length - 2; i >= 0; i--) {
-		if(inner){
+		if(inner == 1){
 			neuStyleClass[i].style.boxShadow = newBoxShadow.replace(",","inset ,") + " inset";
+		}
+		else if(inner == 2){
+			neuStyleClass[i].style.boxShadow = newBoxShadow + "," + newBoxShadow.replace(",","inset ,") + " inset";
+			neuStyleClass[i].style.border = "2px solid " + globalColor;
+
 		}
 		else{
 			neuStyleClass[i].style.boxShadow = newBoxShadow;
@@ -61,7 +84,9 @@ function drawBoxShadow(){
 	blurness = blurness.slice(0,-3);
 	offsetvalue = offsetvalue.slice(0,-3);
 
-	let outputboxshadowstring = '<br/>\
+
+	if(inner == 0){
+		var outputboxshadowstring = '<br/>\
 <span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
 <span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
 <span class="css-value">' + blurness + '</span><span class="css-unit">rem</span>\
@@ -71,6 +96,40 @@ function drawBoxShadow(){
 <span class="css-value">' + blurness + '</span><span class="css-unit">rem </span>\
 <span class="css-value">' + newdarkShadow + '</span>;';
 
+	}
+	else if(inner == 1){
+		var outputboxshadowstring = '<br/>\
+<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + blurness + '</span><span class="css-unit">rem</span>\
+<span class="css-value"> ' + newlightShadow + '</span> inset,<br/>\
+<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + blurness + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + newdarkShadow + '</span> inset;';
+
+	}
+	else{
+		var outputboxshadowstring = '<br/>\
+<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + blurness + '</span><span class="css-unit">rem</span>\
+<span class="css-value"> ' + newlightShadow + '</span>,<br/>\
+<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + blurness + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + newdarkShadow + '</span>,'+'<br/>\
+<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">-' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + blurness + '</span><span class="css-unit">rem</span>\
+<span class="css-value"> ' + newlightShadow + '</span> inset,<br/>\
+<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + offsetvalue + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + blurness + '</span><span class="css-unit">rem </span>\
+<span class="css-value">' + newdarkShadow + '</span> inset;<br/>\
+<span class="css-attribute">border</span>: <span class="css-value">2</span><span class="css-unit">px</span> <span class="css-unit">solid</span> <span class="css-value">' + globalColor + '</span>;';
+	}
+
 codeOutputBoxShadowCSS.innerHTML = outputboxshadowstring;
 
 
@@ -78,6 +137,29 @@ codeOutputBoxShadowCSS.innerHTML = outputboxshadowstring;
 
 }
 onload= function(){drawBoxShadow()}
+
+let typeInput = document.getElementById("type");
+
+typeInput.oninput = function(e){
+	let v = e.target.value;
+
+	if( v != 2 && neu.style.border.length ){
+		for (var i = neuStyleClass.length - 1; i >= 0; i--) {
+			neuStyleClass[i].style.border = "none";
+		}
+	}
+	if( v == 0 ){
+		inner = 0;
+	}
+	else if( v == 1 ){
+		inner = 1;
+	}
+	else{
+		inner = 2;
+	}
+
+	drawBoxShadow();
+}
 
 let intensityInput = document.getElementById("intensity");
 

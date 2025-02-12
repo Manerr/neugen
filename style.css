@@ -131,7 +131,7 @@ main{
 
 }
 
-.range-container input{
+input[type="range"]{
 	display: inline-block;
 	flex: 1;
 	-webkit-appearance:none;
@@ -144,11 +144,7 @@ main{
 	color: #040833;
 }
 
-.range-container input:focus{
-	outline: 1px solid currentColor;
-}
-
-.range-container input::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
 	-webkit-appearance:none;
 	appearance: none;
 	width: 100%;
@@ -159,7 +155,7 @@ main{
 	height: .4rem;
 }
 
-.range-container input::-webkit-slider-thumb{
+input[type=range]::-webkit-slider-thumb{
 	-webkit-appearance:none;
 	appearance: none;
 	border-radius: 50%;
@@ -167,12 +163,11 @@ main{
 	background-color: currentColor;
 	width: .8rem;
 	position: relative;
-	top: -60%;
+	top: -45%;
 	height: .8rem;
 	cursor: grab;
 	box-sizing: border-box;
-	border: 1px solid #bbb;
-	outline: 1px solid currentColor;
+	outline: 1px solid #141863;
 }
 
 #type{
@@ -182,7 +177,7 @@ main{
 	margin: auto 0px;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     height: 100%;
 }
 
@@ -191,6 +186,7 @@ main{
 	text-align: center;
 	-webkit-appearance:none;
 	appearance:none;
+	border: none;
 	background-color: none;
 	color: inherit;
 	margin: 0;
@@ -198,37 +194,29 @@ main{
 
 #type input::after{
 	font-family: "opensans", sans-serif;
+/*	font-family: sans-serif;*/
 	margin: 0;
 	width: 100%;
 	cursor: pointer;
+	border-radius: .3rem;
 	padding: .4rem .3rem !important;
 	content: attr(title);
 	display: block;
 	color: #040833;
     margin: auto;
+    margin-right: .5rem;
     font-size: .75rem;
     font-weight: 800;
     line-height: 50%;
     letter-spacing: -.7px;
-    box-sizing: border-box;
-    border-top: 1px solid #040833;
-    border-bottom: 1px solid #040833;
-}
-
-#first-input::after{
-	border-top-left-radius: .3rem;
-    border-left: 1px solid #040833;
-	border-bottom-left-radius: .3rem;
-}
-
-#last-input::after{
-	border-top-right-radius: .3rem;
-	border-right: 1px solid #040833;
-	border-bottom-right-radius: .3rem;
+    border-color:red;
+    outline: 1px solid blue;
+	outline-color:lightblue;
+/*    background-color: white;*/
 }
 
 #type input:checked::after{
-	background-color:#9ea1c5;
+	outline-color:#040833;
 
 }
 
@@ -284,6 +272,11 @@ main{
 	user-select: all;
 	padding: 0;
 	margin: 0;
+}
+
+.css-content *{
+/*	transform: translateZ(0);*/
+/*	position: relative;*/
 }
 
 #copy svg{

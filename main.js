@@ -1,6 +1,4 @@
-
 let inner = 0;
-
 let neuExample = document.getElementById("neu");
 
 let settingsform = document.getElementById("form");
@@ -15,6 +13,7 @@ let boxShadowType = 0;
 
 let softness = 1;
 let globalColor = "#e3e3e6";
+
 
 function drawBoxShadow(){
 	let color = colorInput.value;
@@ -39,9 +38,7 @@ function drawBoxShadow(){
 	let darkpower = 88 * intensity;
 
 	let newlightShadow = "#" + Math.min(Math.floor(currentColorR+lightpower),255).toString(16).padStart(2,"0") +  Math.min(Math.floor(currentColorG+lightpower),255).toString(16).padStart(2,"0") +  Math.min(Math.floor(currentColorB+lightpower),255).toString(16).padStart(2,"0");
-	
 	let newdarkShadow = "#" + Math.max(Math.floor(currentColorR-darkpower),0).toString(16).padStart(2,"0") +  Math.max(Math.floor(currentColorG-darkpower),0).toString(16).padStart(2,"0") +  Math.max(Math.floor(currentColorB-darkpower),0).toString(16).padStart(2,"0");
-
 
 
 	//inner shaddow
@@ -196,7 +193,3 @@ copier.onclick = function(e){
 	setTimeout(function(){copiersvg.style.fill = "#fff";copiedMessage.style.display = "none";},150);
 
 }
-
-
-
-

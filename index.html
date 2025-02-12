@@ -51,24 +51,24 @@
 					<input id="color" type="color" name="color"/>
 				</div>
 
-				<div>
+				<div class="range-container">
 					<p>Radius:</p><input type="range" value="8" name="radius" id="radius" min="0" max="50"/>
 				</div>
-				<div>
+				<div class="range-container">
 					<p>Intensity:</p><input type="range" value=".45" name="intensity" id="intensity" min="0" step=".01" max="1.4"/>
 				</div>
-				<div>
+				<div class="range-container">
 					<p>Offset:</p><input type="range" value=".4" name="offset" id="offset" min="0" step=".01" max="1.5" />
 				</div>
-				<div>
+				<div class="range-container">
 					<p>Softness:</p><input type="range" value="1.1" name="blur" id="blur" min="0" max="3" step=".01"/>
 				</div>
 				<div id="type-box">
 					<p>Style:</p>
 					<fieldset id="type" name="radio">			
-						<input type="radio" name="radio" value="0" title="Outside" checked />
+						<input id="first-input" type="radio" name="radio" value="0" title="Outside" checked />
 						<input type="radio" name="radio" value="1" title="Inside"/>
-						<input type="radio" name="radio" value="2" title="Both"/>
+						<input id="last-input" type="radio" name="radio" value="2" title="Both"/>
 					</fieldset>
 				</div>
 

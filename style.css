@@ -131,7 +131,7 @@ main{
 
 }
 
-input[type="range"]{
+.range-container input{
 	display: inline-block;
 	flex: 1;
 	-webkit-appearance:none;
@@ -144,7 +144,11 @@ input[type="range"]{
 	color: #040833;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+.range-container input:focus{
+	outline: 1px solid currentColor;
+}
+
+.range-container input::-webkit-slider-runnable-track {
 	-webkit-appearance:none;
 	appearance: none;
 	width: 100%;
@@ -155,7 +159,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 	height: .4rem;
 }
 
-input[type=range]::-webkit-slider-thumb{
+.range-container input::-webkit-slider-thumb{
 	-webkit-appearance:none;
 	appearance: none;
 	border-radius: 50%;
@@ -163,11 +167,12 @@ input[type=range]::-webkit-slider-thumb{
 	background-color: currentColor;
 	width: .8rem;
 	position: relative;
-	top: -45%;
+	top: -60%;
 	height: .8rem;
 	cursor: grab;
 	box-sizing: border-box;
-	outline: 1px solid #141863;
+	border: 1px solid #bbb;
+	outline: 1px solid currentColor;
 }
 
 #type{
@@ -177,7 +182,7 @@ input[type=range]::-webkit-slider-thumb{
 	margin: auto 0px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     height: 100%;
 }
 
@@ -186,7 +191,6 @@ input[type=range]::-webkit-slider-thumb{
 	text-align: center;
 	-webkit-appearance:none;
 	appearance:none;
-	border: none;
 	background-color: none;
 	color: inherit;
 	margin: 0;
@@ -194,29 +198,37 @@ input[type=range]::-webkit-slider-thumb{
 
 #type input::after{
 	font-family: "opensans", sans-serif;
-/*	font-family: sans-serif;*/
 	margin: 0;
 	width: 100%;
 	cursor: pointer;
-	border-radius: .3rem;
 	padding: .4rem .3rem !important;
 	content: attr(title);
 	display: block;
 	color: #040833;
     margin: auto;
-    margin-right: .5rem;
     font-size: .75rem;
     font-weight: 800;
     line-height: 50%;
     letter-spacing: -.7px;
-    border-color:red;
-    outline: 1px solid blue;
-	outline-color:lightblue;
-/*    background-color: white;*/
+    box-sizing: border-box;
+    border-top: 1px solid #040833;
+    border-bottom: 1px solid #040833;
+}
+
+#first-input::after{
+	border-top-left-radius: .3rem;
+    border-left: 1px solid #040833;
+	border-bottom-left-radius: .3rem;
+}
+
+#last-input::after{
+	border-top-right-radius: .3rem;
+	border-right: 1px solid #040833;
+	border-bottom-right-radius: .3rem;
 }
 
 #type input:checked::after{
-	outline-color:#040833;
+	background-color:#9ea1c5;
 
 }
 
@@ -272,11 +284,6 @@ input[type=range]::-webkit-slider-thumb{
 	user-select: all;
 	padding: 0;
 	margin: 0;
-}
-
-.css-content *{
-/*	transform: translateZ(0);*/
-/*	position: relative;*/
 }
 
 #copy svg{

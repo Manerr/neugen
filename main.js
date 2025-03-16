@@ -11,6 +11,8 @@ let codeOutputBoxShadowCSS = document.getElementById("css-box-shadow");
 
 let neuStyleClass = document.querySelectorAll(".neu-global-style");
 
+let shuffler = document.getElementById("shuffler");
+
 let boxShadowType = 0;
 
 let softness = 1;
@@ -64,7 +66,7 @@ function drawBoxShadow(){
 
 
 	
-	for (var i = neuStyleClass.length - 2; i >= 0; i--) {
+	for (var i = neuStyleClass.length - 1; i >= 0; i--) {
 		if(inner == 1){
 			neuStyleClass[i].style.boxShadow = newBoxShadow.replace(",","inset ,") + " inset";
 		}
@@ -78,7 +80,7 @@ function drawBoxShadow(){
 		}
 	}
 	neuStyleClass[2].style.boxShadow = newBoxShadow.replace(",","inset ,") + " inset";
-	neuStyleClass[3].style.boxShadow = newBoxShadow.replace(",","inset ,") + " inset";
+	neuStyleClass[4].style.boxShadow = newBoxShadow.replace(",","inset ,") + " inset";
 
 
 	blurness = blurness.slice(0,-3);
@@ -198,5 +200,22 @@ copier.onclick = function(e){
 }
 
 
+
+shuffler.onclick = function(){
+
+	let inputs = document.querySelectorAll("input[type=range],input[type=color]");
+	for (var i = inputs.length - 1; i >= 0; i--) {
+		let el = inputs[i];
+		let type = el.type;
+
+		if(type == "color") el.value = "#" + Math.floor(Math.random()*256).toString(16).padStart(2,"0") + Math.floor(Math.random()*256).toString(16).padStart(2,"0") + Math.floor(Math.random()*256).toString(16).padStart(2,"0");
+		else if(type == "range" && el.name != "offset" ) el.value = Math.random() * el.max * .9; 
+		else el.value = Math.random() *.8; 
+	}
+
+	typeInput.children[ Math.floor(Math.random() * 3) ].click()
+
+	drawBoxShadow();
+}
 
 

@@ -78,7 +78,7 @@ main{
 }
 
 #title h2{
-	font-family: "dmsans";
+	font-family: "dmsans","sans-serif";
 	margin-top: 0;
 	margin-bottom: .3rem;
 	letter-spacing: 1px;
@@ -107,7 +107,45 @@ main{
 	padding: .1rem;
 	width:18rem;
 	max-width: 80vw;
+	position: relative;
 }
+
+
+#shuffler{
+	background: inherit;
+	border: none;
+	-webkit-appearance: none;
+	appearance: none;
+	margin-left: auto;
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 8;
+	position: relative;
+}
+
+#shuffler img{
+	width: 90%;
+	height: 90%;
+	transition: .5s filter;
+	filter: invert(40%);
+}
+
+#shuffler:hover img{
+	transition: .5s filter;
+	filter: invert(0%);
+}
+
+#shuffler:active{
+	top: -1px;
+	right: -1px;
+}
+
 
 #form div{
 	padding: 0;
@@ -194,7 +232,6 @@ input[type=range]::-webkit-slider-thumb{
 
 #type input::after{
 	font-family: "opensans", sans-serif;
-/*	font-family: sans-serif;*/
 	margin: 0;
 	width: 100%;
 	cursor: pointer;
@@ -212,7 +249,6 @@ input[type=range]::-webkit-slider-thumb{
     border-color:red;
     outline: 1px solid blue;
 	outline-color:lightblue;
-/*    background-color: white;*/
 }
 
 #type input:checked::after{
@@ -223,6 +259,9 @@ input[type=range]::-webkit-slider-thumb{
 
 .color-field{
 	position: relative;
+	margin-top: 0;
+	padding-top: 0 !important;
+
 }
 
 #color{
@@ -343,6 +382,10 @@ footer{
 }
 
 #bottom-link{
+
+	border: none;
+	-webkit-appearance: none;
+	appearance: none;
 	position: relative;
 	left: -.4rem;
 	display: inline-block;
@@ -366,3 +409,4 @@ footer{
 	filter: invert(75%);
 
 }
+

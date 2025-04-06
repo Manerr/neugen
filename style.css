@@ -201,7 +201,7 @@ input[type=range]::-webkit-slider-thumb{
 	background-color: currentColor;
 	width: .8rem;
 	position: relative;
-	top: -45%;
+	top: -50%;
 	height: .8rem;
 	cursor: grab;
 	box-sizing: border-box;

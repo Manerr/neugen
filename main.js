@@ -173,8 +173,8 @@ colorInput.oninput = function(e){
 
 let radiusInput = document.getElementById("radius");
 radiusInput.oninput = function(e){
-	let radius = radiusInput.value + "%";
-	neu.style.borderRadius = radius;
+	let radius = radiusInput.value;
+	neu.style.borderRadius = radius + "%";
 	document.getElementById("css-border-radius").innerText = radius;
 
 }
